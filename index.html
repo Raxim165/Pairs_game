@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game card</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module">
+    import { AmazingCard, flipCard } from './card.js'
+
+    const container = document.createElement("div");
+    container.classList.add("container");
+
+    const cardsAmount = 9; // Количество пар
+    const cardsNumberArray = [];
+
+    for (let i = 0; i < cardsAmount; i++) cardsNumberArray.push(i, i);
+    for (let i = 0; i < cardsNumberArray.length; i++) { // Алгоритм перемешивания карт
+      const randomI = Math.floor(Math.random() * cardsNumberArray.length);
+      const temp = cardsNumberArray[i];
+      cardsNumberArray[i] = cardsNumberArray[randomI];
+      cardsNumberArray[randomI] = temp;
+    }
+
+    for (const cardNumber of cardsNumberArray) {
+      new AmazingCard(container, cardNumber, flipCard);
+    }
+
+    document.querySelector(".new-game-button").addEventListener('click', () => location.reload())
+    document.getElementById("app").append(container);
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <button class="new-game-button">новая игра</button>
+</body>
+
+</html>

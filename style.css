@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0e0e0e;
+  letter-spacing: 0.15em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 50px 0;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  transition: transform 0.5s, background-color 0.3s;
+}
+
+.card.open {
+  transform: rotateY(180deg);
+  background-color: white;
+}
+
+.card.success {
+  background-color: rgb(0, 217, 0);
+  pointer-events: none; /* Отключаем клики */
+}
+
+.card:hover {
+  background-color: #727272;
+}
+
+.card:active {
+  background-color: #222222;
+}
+
+.new-game-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #5685de;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-size: 20px;
+  letter-spacing: inherit;
+  transition: transform 1.5s;
+  transition: background-color 0.3s;
+}
+
+.new-game-button:hover {
+  background-color: #80adff;
+}
+
+.new-game-button:active {
+  background-color: #2b72f5;
+}
