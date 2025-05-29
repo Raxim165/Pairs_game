@@ -62,7 +62,7 @@ body {
 }
 
 .new-game-button:hover {
-  background-color: red;
+  background-color: #80adff;
 }
 
 .new-game-button:active {
